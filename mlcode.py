@@ -130,9 +130,27 @@ from sklearn.ensemble import RandomForestClassifier
 classifier = RandomForestClassifier(n_estimators = 10)
 classifier.fit(X_train, Y_train)
 y_pred = classifier.predict(X_test)                
-
 classifier.score(X_train, Y_train)
 acc_random_forest = round(classifier.score(X_train, Y_train) * 100, 2)
 acc_random_forest
 print(acc_random_forest)
-     
+
+#fitting logistc regression to the training set 
+from sklearn.linear_model import LogisticRegression
+classifier1 = LogisticRegression(random_state=0)
+classifier1.fit(X_train, Y_train)
+# Predicting the Test set results
+y_pred = classifier1.predict(X_test)
+classifier1.score(X_train, Y_train)
+acc_random_forest1 = round(classifier1.score(X_train, Y_train) * 100, 2)
+print(acc_random_forest1)
+
+# Fitting SVM classifier to the Training set
+from sklearn.svm import SVC
+classifier2 = SVC(kernel='linear', random_state=0)
+classifier2.fit(X_train, Y_train)
+# Predicting the Test set results
+y_pred = classifier2.predict(X_test)   
+classifier2.score(X_train, Y_train)
+acc_random_forest2 = round(classifier2.score(X_train, Y_train) * 100, 2)
+print(acc_random_forest2)
